@@ -1,0 +1,3 @@
+# The plugin only uses what AstrBot already provides (image reading goes
+# through the multimodal chat provider), so there is nothing to install here.
+# Keep this file so dependencies can be added later.

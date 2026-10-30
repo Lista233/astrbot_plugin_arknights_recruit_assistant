@@ -1,0 +1,93 @@
+{
+  "recognize_mode": {
+    "description": "图片识别开关",
+    "type": "string",
+    "default": "auto",
+    "options": ["auto", "off"],
+    "hint": "auto = 用多模态模型读图；off = 关闭图片识别（仅接受手动输入词条）"
+  },
+  "provider_id": {
+    "description": "识别用的模型 ID",
+    "type": "string",
+    "default": "",
+    "hint": "留空使用当前对话模型；填模型 ID 则固定用该多模态模型读图。开启「自定义识图接口」后此项失效"
+  },
+  "custom_vision_enabled": {
+    "description": "使用自定义识图接口",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后图片识别直接请求下面填的地址 / 模型 / 秘钥，完全不用 bot 里配置的模型；关闭则维持默认（当前对话模型或上面的模型 ID）"
+  },
+  "custom_vision_base_url": {
+    "description": "自定义识图接口地址",
+    "type": "string",
+    "default": "",
+    "hint": "OpenAI 兼容地址，如 https://api.example.com/v1；也可直接填完整的 .../chat/completions"
+  },
+  "custom_vision_model": {
+    "description": "自定义识图模型名",
+    "type": "string",
+    "default": "",
+    "hint": "如 gpt-4o-mini、qwen-vl-max，需支持图片输入"
+  },
+  "custom_vision_api_key": {
+    "description": "自定义识图 API 秘钥",
+    "type": "string",
+    "default": "",
+    "hint": "以 Authorization: Bearer 方式发送；地址 / 模型 / 秘钥三项都填了自定义接口才生效"
+  },
+  "custom_vision_timeout": {
+    "description": "自定义识图请求超时（秒）",
+    "type": "int",
+    "default": 60,
+    "hint": "每张截图调用一次接口，超时按识别失败处理（图片较大时建议调高）"
+  },
+  "star_floor": {
+    "description": "招募时长对应的星级下限",
+    "type": "int",
+    "default": 3,
+    "hint": "9 小时填 3（默认，1★/2★ 干员不出）；4 小时填 2；1 小时填 1"
+  },
+  "max_tags": {
+    "description": "每组组合最多选几个词条",
+    "type": "int",
+    "default": 3,
+    "hint": "游戏内上限为 3，一般不需要改"
+  },
+  "max_per_tier": {
+    "description": "每个优先级档位最多列出几组组合",
+    "type": "int",
+    "default": 6,
+    "hint": "档位包括必出6★ / 必出5★ / 保底4★+极小概率5★ / 保底4★ / 小概率5★ / 小概率4★"
+  },
+  "chunk_size": {
+    "description": "单条消息最大字符数",
+    "type": "int",
+    "default": 1200,
+    "hint": "结果过长时会按行拆成多条发送"
+  },
+  "image_cache_ttl": {
+    "description": "最近截图缓存时长（秒）",
+    "type": "int",
+    "default": 180,
+    "hint": "支持先发公招截图、隔几条消息再发 /公招；填 0 关闭该功能，只认同一消息里的图片"
+  },
+  "image_wait": {
+    "description": "先发指令时等待截图的秒数",
+    "type": "int",
+    "default": 8,
+    "hint": "先发 /公招、再补图时最多等这么久（收到新图会再续 3 秒）；填 0 不等待"
+  },
+  "max_images": {
+    "description": "单次最多识别几张截图",
+    "type": "int",
+    "default": 5,
+    "hint": "每次 /公招 最多识别前 N 张截图（缓存与同一消息里的图合并，上限 9）"
+  },
+  "forward_result": {
+    "description": "识别结果用合并转发发送",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后每张截图的报告作为一条聊天记录发出；仅 OneBot 系（NapCat/Lagrange 等）支持合并转发，QQ 官方机器人等平台会自动改为普通文本"
+  }
+}
