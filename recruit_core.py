@@ -639,7 +639,7 @@ def render_report(
     all_combos = list(combos)
     combos = [combo for combo in all_combos if is_worth_showing(combo)]
 
-    lines: list[str] = [f"公开招募小助手 · {label}" if label else "公开招募小助手"]
+    lines: list[str] = [f"明日方舟公招助手 · {label}" if label else "明日方舟公招助手"]
     lines.append(f"词条：{' / '.join(tags) if tags else '（无）'}")
 
     if not combos:

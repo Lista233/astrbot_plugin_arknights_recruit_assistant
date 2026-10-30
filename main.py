@@ -1,4 +1,4 @@
-"""公开招募小助手 —— 明日方舟公招词条分析与图片识别插件。
+"""明日方舟公招助手 —— 明日方舟公招词条分析与图片识别插件。
 
 指令：
     /公开招募 [词条...]   发送公招截图或直接输入词条，列出 0~3 词条组合的星级收益
@@ -60,7 +60,7 @@ except ImportError:  # pragma: no cover - 取决于 AstrBot 的加载方式
         render_tag_catalog,
     )
 
-__version__ = "v1.11.0"
+__version__ = "v1.0.0"
 
 DEFAULT_CONFIG: dict = {
     "recognize_mode": "auto",
@@ -84,7 +84,15 @@ DEFAULT_CONFIG: dict = {
 WAKE_PREFIXES = ("/", "!", "！", "#", "。", "／")
 
 # 指令名（长名在前），用于判断指令后面是否还跟了内容
-RECRUIT_NAMES = ("公开招募小助手", "公开招募", "公招分析", "公招助手", "公招")
+# 「公开招募小助手」是旧名字，保留作别名，避免老用户改口
+RECRUIT_NAMES = (
+    "明日方舟公招助手",
+    "公开招募小助手",
+    "公开招募",
+    "公招分析",
+    "公招助手",
+    "公招",
+)
 
 # 老版本 AstrBot 可能没有 EventMessageType，缺失时跳过「最近截图」缓存
 _ALL_MESSAGES = getattr(getattr(filter, "EventMessageType", None), "ALL", None)
@@ -96,7 +104,7 @@ IMAGE_CACHE_MAX_SESSIONS = 20
 NODE_TEXT_LIMIT = 3000
 
 # 合并转发节点的显示名
-NODE_NAME = "公招助手"
+NODE_NAME = "明日方舟公招助手"
 
 # 合并转发的最后一条（兜底声明）
 FORWARD_FOOTER = "招募建议仅供参考，博士们请根据自身 BOX 灵活调整呦~"
@@ -146,7 +154,7 @@ RECOGNIZE_PROMPT = """你是《明日方舟》公开招募界面的识别助手�
 
 如果某个词条看不清，请输出最接近的上面某个词条；完全无法判断就不要输出。"""
 
-HELP_TEXT = """公开招募小助手
+HELP_TEXT = """明日方舟公招助手
 ————————————
 /公开招募            # 直接带图 / 先发 1~N 张截图再发指令 / 先发指令再贴图
 /公开招募 输出 生存   # 直接输入词条，空格/逗号分隔均可
@@ -227,7 +235,7 @@ def chunk_text(text: str, limit: int) -> list[str]:
 
 
 class ArknightsRecruitPlugin(Star):
-    """公开招募小助手：识别公招词条 → 枚举组合 → 推荐保底星级。"""
+    """明日方舟公招助手：识别公招词条 → 枚举组合 → 推荐保底星级。"""
 
     def __init__(self, context: Context, config: dict | None = None):
         super().__init__(context, config)
@@ -793,7 +801,7 @@ class ArknightsRecruitPlugin(Star):
     # ------------------------------------------------------------------
     @filter.command(
         "公开招募",
-        alias={"公招", "公招分析", "公招助手", "公开招募小助手"},
+        alias={"公招", "公招分析", "公招助手", "公开招募小助手", "明日方舟公招助手"},
     )
     async def cmd_recruit(self, event: AstrMessageEvent):
         """/公开招募 [词条...] —— 分析公招词条组合（支持多张截图，结果合并转发）。"""
