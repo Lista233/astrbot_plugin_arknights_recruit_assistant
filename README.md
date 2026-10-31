@@ -5,7 +5,7 @@
 
 ## 效果示例
 
-![发送 /公开招募 + 两张截图，逐张识别后以合并转发返回](https://raw.githubusercontent.com/Lista233/astrbot_plugin_arknights_recruit/main/pic/exp.jpg)
+![发送 /公开招募 + 两张截图，逐张识别后以合并转发返回](https://raw.githubusercontent.com/Lista233/astrbot_plugin_arknights_recruit_helper/main/pic/exp.jpg)
 
 一条指令带多张公招截图 → 逐张识别词条 → 合并转发里每张截图各一条报告
 
