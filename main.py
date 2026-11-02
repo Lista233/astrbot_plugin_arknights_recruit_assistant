@@ -60,7 +60,7 @@ except ImportError:  # pragma: no cover - 取决于 AstrBot 的加载方式
         render_tag_catalog,
     )
 
-__version__ = "v1.0.1"
+__version__ = "v1.0.2"
 
 DEFAULT_CONFIG: dict = {
     "recognize_mode": "auto",

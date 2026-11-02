@@ -13,7 +13,7 @@ desc: >
   支持一次传多张截图（分条发送也可以），多张并发识别后以合并转发发送结果
   （仅 OneBot 系平台，QQ 官方机器人等会自动改用普通文本）。
   只勾中「高级资深干员」/「资深干员」时，整池名单会单独成一条消息。
-version: 1.0.1
+version: 1.0.2
 author: Lista
 repo: https://github.com/Lista233/astrbot_plugin_arknights_recruit
 astrbot_version: ">=4.0.0"
