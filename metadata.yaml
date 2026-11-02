@@ -1,4 +1,4 @@
-name: astrbot_plugin_arknights_recruit
+name: astrbot_plugin_arknights_recruit_assistant
 display_name: 明日方舟公开招募助手
 short_desc: 明日方舟公招词条分析：识别截图或手动输入的词条，枚举 1~3 词条组合并按 6★/5★/4★ 优先级推荐
 desc: >
@@ -15,7 +15,7 @@ desc: >
   只勾中「高级资深干员」/「资深干员」时，整池名单会单独成一条消息。
 version: 1.0.2
 author: Lista
-repo: https://github.com/Lista233/astrbot_plugin_arknights_recruit
+repo: https://github.com/Lista233/astrbot_plugin_arknights_recruit_assistant
 astrbot_version: ">=4.0.0"
 support_platforms:
   - aiocqhttp

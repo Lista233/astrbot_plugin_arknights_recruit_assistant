@@ -166,7 +166,7 @@ python tools/build_recruit_data.py [template-html.html 路径]
 ## 目录结构
 
 ```
-astrbot_plugin_arknights_recruit/
+astrbot_plugin_arknights_recruit_assistant/
 ├── main.py                  # 插件入口：指令注册、图片获取、模型读图
 ├── recruit_core.py          # 词条归一化、组合枚举与排序、文本排版（与 AstrBot 解耦）
 ├── data/recruit_data.json   # 干员数据（160 人）
